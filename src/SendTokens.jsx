@@ -1,10 +1,11 @@
 import { useConnection, useWallet } from "@solana/wallet-adapter-react"
-import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction} from "@solana/web3.js";
+import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction } from "@solana/web3.js";
+import React from "react";
 
 
 export function SendTokens() {
     const wallet = useWallet();
-    const {connection} = useConnection();
+    const { connection } = useConnection();
 
     async function sendTokens() {
         let to = document.getElementById("to").value;
@@ -21,12 +22,31 @@ export function SendTokens() {
     }
 
     return (
-        <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <input id="to" className="input" type="text" placeholder="Recipient Address" style={{ width: '100%', maxWidth: 260 }} />
-            <input id="amount" className="input" type="text" placeholder="Amount" style={{ width: '100%', maxWidth: 260 }} />
-            <button className="button" onClick={sendTokens} style={{ width: '100%', maxWidth: 260 }}>
+        <form
+            className="form-vertical"
+            onSubmit={e => {
+                e.preventDefault();
+                sendTokens();
+            }}
+            autoComplete="off"
+        >
+            <input
+                id="to"
+                className="input recipient-address"
+                type="text"
+                placeholder="Recipient Address"
+                autoComplete="off"
+            />
+            <input
+                id="amount"
+                className="input"
+                type="text"
+                placeholder="Amount"
+                autoComplete="off"
+            />
+            <button className="button" type="submit">
                 Send
             </button>
-        </div>
+        </form>
     );
 }

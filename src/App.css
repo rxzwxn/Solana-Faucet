@@ -1,74 +1,91 @@
-.app-bg {
+/* Global Layout */
+body, .app-bg {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  background: #111;
+  color: #fff;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Main Container */
 .container {
-  max-width: 400px;
+  max-width: 420px;
   width: 100%;
   margin: auto;
-  padding: 32px;
-  background: rgba(255,255,255,0.03);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  padding: 40px 32px;
+  background: #18181b;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
   text-align: center;
 }
 
+/* Title + Tagline */
 .title {
-  color: #38bdf8;
-  font-size: 2rem;
-  margin-bottom: 24px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.wallet-controls {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.card {
-  background: rgba(30,41,59,0.8);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 4px 16px rgba(56,189,248,0.1);
-  color: #f1f5f9;
-}
-
-.card h2 {
-  margin-bottom: 12px;
-  color: #38bdf8;
-}
-
-.card p {
-  margin-bottom: 20px;
-  color: #94a3b8;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
 }
 
 .tagline {
-  color: #94a3b8;
+  color: #a1a1aa;
   font-size: 1.1rem;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
   font-weight: 500;
 }
 
+/* Wallet Controls */
+.wallet-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+/* Input Fields */
+.input {
+  border: 1.5px solid #27272a;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  background: #111;
+  color: #fff;
+  outline: none;
+  width: 100%;
+  transition: border 0.2s;
+  margin-bottom: 14px; /* Balanced spacing */
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #6366f1;
+}
+
+.input.recipient-address {
+  margin-top: 12px;
+}
+
+/* Buttons */
 .button {
   background: linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%);
   color: #fff;
   border: none;
   border-radius: 8px;
-  padding: 10px 22px;
+  padding: 12px 0;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  width: 100%;
+  margin-bottom: 20px;
   transition: box-shadow 0.2s, background 0.2s;
   box-shadow: 0 2px 8px rgba(56,189,248,0.15);
-  margin-top: 8px;
+}
+
+.button:last-of-type {
+  margin-bottom: 0;
 }
 
 .button:hover {
@@ -76,19 +93,26 @@
   box-shadow: 0 4px 16px rgba(56,189,248,0.25);
 }
 
-.input {
-  border: 1px solid #38bdf8;
-  border-radius: 8px;
-  padding: 8px 12px;
-  font-size: 1rem;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  background: rgba(30,41,59,0.3);
-  color: #f1f5f9;
-  outline: none;
-  transition: border 0.2s;
+/* Sections and Label Styles */
+.form-vertical {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.input:focus {
-  border: 1.5px solid #0ea5e9;
+.form-section {
+  margin-bottom: 24px;
+}
+
+.section-label {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  margin: 0 0 6px 0;
+  text-align: left;
+}
+
+.balance-value {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 12px;
 }
