@@ -26,7 +26,7 @@ A modern web3 dApp for instantly receiving free test SOL, sending tokens, and si
 1. Clone the repository:
    ```
    git clone https://github.com/yourusername/solana-faucet.git
-   cd solana-faucet/wallet-adapter
+   cd solana-faucet/Sol-faucet
    ```
 
 2. Install dependencies:
