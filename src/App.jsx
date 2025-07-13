@@ -9,9 +9,12 @@ import {
 import { clusterApiUrl } from '@solana/web3.js';
 
 import { Airdrop } from './Airdrop';
+import { ShowSolBalance } from './ShowBalance';
+import { SignMessage } from './SignMessage';
+import { SendTokens } from './SendTokens';
 
 import '@solana/wallet-adapter-react-ui/styles.css';
-import './App.css'; // Add this line for custom styles
+import './App.css';
 
 function App() {
   const endpoint = 'https://solana-devnet.g.alchemy.com/v2/pJATUfpb0CiTFOdHbsIju';
@@ -34,6 +37,9 @@ function App() {
                 <h2>Airdrop SOL</h2>
                 <p>Connect your wallet and request test SOL on Devnet.</p>
                 <Airdrop />
+                <ShowSolBalance />
+                <SignMessage />
+                <SendTokens/>
               </div>
             </WalletModalProvider>
           </WalletProvider>
